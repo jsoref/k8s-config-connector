@@ -1127,7 +1127,7 @@ type ExternalServiceCost struct {
 	SlotMs *int64 `json:"slotMs,omitempty"`
 
 	// Non-preemptable reserved slots used for external job.
-	//  For example, reserved slots for Cloua AI Platform job are the VM usages
+	//  For example, reserved slots for Cloud AI Platform job are the VM usages
 	//  converted to BigQuery slot with equivalent mount of price.
 	ReservedSlotCount *int64 `json:"reservedSlotCount,omitempty"`
 }
