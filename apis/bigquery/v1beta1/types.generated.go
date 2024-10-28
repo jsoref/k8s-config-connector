@@ -1060,7 +1060,7 @@ type ExternalDataConfiguration struct {
 	//  * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits);
 	//  * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits);
 	//  * (76,38) -> BIGNUMERIC;
-	//  * (77,38) -> BIGNUMERIC (error if value exeeds supported range).
+	//  * (77,38) -> BIGNUMERIC (error if value exceeds supported range).
 	//
 	//  This field cannot contain duplicate types. The order of the types in this
 	//  field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as
@@ -1674,7 +1674,7 @@ type JobConfigurationLoad struct {
 	//  * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits);
 	//  * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits);
 	//  * (76,38) -> BIGNUMERIC;
-	//  * (77,38) -> BIGNUMERIC (error if value exeeds supported range).
+	//  * (77,38) -> BIGNUMERIC (error if value exceeds supported range).
 	//
 	//  This field cannot contain duplicate types. The order of the types in this
 	//  field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as
