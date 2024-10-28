@@ -3331,7 +3331,7 @@ type Model_SeasonalPeriod struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.Model.StringHparamSearchSpace
 type Model_StringHparamSearchSpace struct {
-	// Canididates for the string or enum parameter in lower case.
+	// Candidates for the string or enum parameter in lower case.
 	Candidates []string `json:"candidates,omitempty"`
 }
 
