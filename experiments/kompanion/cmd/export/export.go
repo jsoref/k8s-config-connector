@@ -298,7 +298,7 @@ func RunExport(ctx context.Context, opts *ExportOptions) error {
 			}
 			if !contains(apiResource.Verbs, "list") {
 				// todo acpana log debug level
-				// log.Printf("ApiResource %s is not listabble; skipping", apiResource.SingularName)
+				// log.Printf("ApiResource %s is not listable; skipping", apiResource.SingularName)
 				continue
 			}
 
