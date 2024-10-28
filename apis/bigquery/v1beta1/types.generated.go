@@ -3122,7 +3122,7 @@ type Model_HparamSearchSpaces struct {
 	// Minimum split loss for boosted tree models.
 	MinSplitLoss *Model_float64HparamSearchSpace `json:"minSplitLoss,omitempty"`
 
-	// Hyperparameter for matrix factoration when implicit feedback type is
+	// Hyperparameter for matrix factorization when implicit feedback type is
 	//  specified.
 	WalsAlpha *Model_float64HparamSearchSpace `json:"walsAlpha,omitempty"`
 
@@ -3639,7 +3639,7 @@ type Model_TrainingRun_TrainingOptions struct {
 	//  factorization.
 	FeedbackType *string `json:"feedbackType,omitempty"`
 
-	// Hyperparameter for matrix factoration when implicit feedback type is
+	// Hyperparameter for matrix factorization when implicit feedback type is
 	//  specified.
 	WalsAlpha *float64 `json:"walsAlpha,omitempty"`
 
