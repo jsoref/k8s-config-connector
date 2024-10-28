@@ -4188,12 +4188,12 @@ type Routine struct {
 	//  not exhaustive, and successfully creating a procedure doesn't guarantee
 	//  that the procedure will successfully execute at runtime. If `strictMode` is
 	//  set to `TRUE`, the procedure body is further checked for errors such as
-	//  non-existent tables or columns. The `CREATE PROCEDURE` statement fails if
+	//  nonexistent tables or columns. The `CREATE PROCEDURE` statement fails if
 	//  the body fails any of these checks.
 	//
 	//  If `strictMode` is set to `FALSE`, the procedure body is checked only for
 	//  syntax. For procedures that invoke themselves recursively, specify
-	//  `strictMode=FALSE` to avoid non-existent procedure errors during
+	//  `strictMode=FALSE` to avoid nonexistent procedure errors during
 	//  validation.
 	//
 	//  Default value is `TRUE`.
