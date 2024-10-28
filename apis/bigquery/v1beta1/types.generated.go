@@ -3173,7 +3173,7 @@ type Model_HparamTuningTrial struct {
 	// Ending time of the trial.
 	EndTimeMs *int64 `json:"endTimeMs,omitempty"`
 
-	// The hyperprameters selected for this trial.
+	// The hyperparameters selected for this trial.
 	Hparams *Model_TrainingRun_TrainingOptions `json:"hparams,omitempty"`
 
 	// Evaluation metrics of this trial calculated on the test data.
