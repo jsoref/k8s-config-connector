@@ -2075,7 +2075,7 @@ type JobStatistics struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.JobStatistics.TransactionInfo
 type JobStatistics_TransactionInfo struct {
-	// Output only. [Alpha] Id of the transaction.
+	// Output only. [Alpha] ID ofthe transaction.
 	TransactionID *string `json:"transactionID,omitempty"`
 }
 
@@ -3486,7 +3486,7 @@ type Model_TrainingRun_IterationResult_ClusterInfo struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.Model.TrainingRun.IterationResult.PrincipalComponentInfo
 type Model_TrainingRun_IterationResult_PrincipalComponentInfo struct {
-	// Id of the principal component.
+	// ID ofthe principal component.
 	PrincipalComponentID *int64 `json:"principalComponentID,omitempty"`
 
 	// Explained variance by this principal component, which is simply the
