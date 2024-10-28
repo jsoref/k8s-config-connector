@@ -2795,7 +2795,7 @@ type Model_AggregateClassificationMetrics struct {
 
 	// Threshold at which the metrics are computed. For binary
 	//  classification models this is the positive class threshold.
-	//  For multi-class classfication models this is the confidence
+	//  For multi-class classification models this is the confidence
 	//  threshold.
 	Threshold *float64 `json:"threshold,omitempty"`
 
