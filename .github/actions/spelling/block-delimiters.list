@@ -1,0 +1,59 @@
+# Public Keys
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+
+# Private Keys
+-----BEGIN PRIVATE KEY-----
+-----END PRIVATE KEY-----
+
+# RSA Private Key
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+
+# GPG Public Key
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----
+
+# GPG Signature
+-----BEGIN PGP SIGNATURE-----
+-----END PGP SIGNATURE-----
+
+# Certificates
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+
+# jwksJson
+jwksJson: "{
+}"
+
+# false positive for Go imports
+can't Get(...) after
+import
+
+# Go imports
+import (
+)
+
+# terraform
+labels = {
+}
+
+# snippet generation
+preferredSampleForResource = map[string]string{
+}
+
+# harness
+if os.Getenv("E2E_GCP_TARGET") == "vcr" {
+}
+
+# mock http roundtrip
+var services []MockService
+for _, service := range services {
+
+# presubmit constants
+RepresentativeCRUDTestsForAllServices = map[string][]string{
+Services with special testing
+
+# main
+manualLicenseURLMapping = map[string]string{
+}
