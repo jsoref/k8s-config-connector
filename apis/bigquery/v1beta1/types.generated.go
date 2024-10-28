@@ -575,7 +575,7 @@ type Dataset struct {
 	//  afterwards, and does not alter the existing tables.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	DefaultCollation *string `json:"defaultCollation,omitempty"`
 
@@ -4786,7 +4786,7 @@ type Table struct {
 	//  added afterwards, and does not alter the existing fields.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	DefaultCollation *string `json:"defaultCollation,omitempty"`
 
@@ -4994,7 +4994,7 @@ type TableFieldSchema struct {
 	// Optional. Field collation can be set only when the type of field is STRING.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	Collation *string `json:"collation,omitempty"`
 
