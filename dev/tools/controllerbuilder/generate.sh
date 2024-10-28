@@ -129,7 +129,7 @@ go run . generate-types \
     --api-version networkconnectivity.cnrm.cloud.google.com/v1alpha1 \
     --output-api ${APIS_DIR} \
     --kind NetworkConnectivityServiceConnectionPolicy \
-    --proto-resource ServiceConnecqionPolicy
+    --proto-resource ServiceConnectionPolicy
 
 go run . generate-mapper \
     --proto-source-path ../proto-to-mapper/build/googleapis.pb \
