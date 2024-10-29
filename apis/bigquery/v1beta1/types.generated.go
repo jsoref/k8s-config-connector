@@ -4477,7 +4477,7 @@ type SparkStatistics struct {
 	SparkJobID *string `json:"sparkJobID,omitempty"`
 
 	// Output only. Location where the Spark job is executed.
-	//  A location is selected by BigQueury for jobs configured to run in a
+	//  A location is selected by BigQuery for jobs configured to run in a
 	//  multi-region.
 	SparkJobLocation *string `json:"sparkJobLocation,omitempty"`
 
