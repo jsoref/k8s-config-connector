@@ -191,7 +191,7 @@ targetServiceAccounts:
         </td>
         <td>
             <p><code class="apitype">string</code></p>
-            <p>{% verbatim %}The `name` field of a `ComputeFirewall olicy ` resource.{% endverbatim %}</p>
+            <p>{% verbatim %}The `name` field of a `ComputeFirewallPolicy ` resource.{% endverbatim %}</p>
         </td>
     </tr>
     <tr>
