@@ -268,7 +268,7 @@ func RunExport(ctx context.Context, opts *ExportOptions) error {
 		return fmt.Errorf("error creating dynamic client: %w", err)
 	}
 
-	// use the discovery client to iterate over all api resoruces
+	// use the discovery client to iterate over all api resources
 	discoveryClient := clientset.Discovery()
 	apiResourceLists, err := discoveryClient.ServerPreferredResources()
 	if err != nil {
