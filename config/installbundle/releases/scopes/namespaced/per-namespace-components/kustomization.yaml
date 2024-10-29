@@ -19,7 +19,7 @@ commonLabels:
 commonAnnotations:
   cnrm.cloud.google.com/version: 0.0.0-dev
 nameSuffix:
-  -mynamespace
+  - mynamespace
 resources:
   - ../../../../components/manager/authmodes/withworkloadidentity
   - rolebindings.yaml
