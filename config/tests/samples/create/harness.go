@@ -164,7 +164,7 @@ func NewHarness(ctx context.Context, t *testing.T, opts ...HarnessOption) *Harne
 	if targetKube := os.Getenv("E2E_KUBE_TARGET"); targetKube == "envtest" {
 		whCfgs, err := testwebhook.GetTestCommonWebhookConfigs()
 		if err != nil {
-			h.Fatalf("error getting common wehbook configs: %v", err)
+			h.Fatalf("error getting common webhook configs: %v", err)
 		}
 		webhooks = append(webhooks, whCfgs...)
 
@@ -867,7 +867,7 @@ func MaybeSkip(t *testing.T, name string, resources []*unstructured.Unstructured
 			case schema.GroupKind{Group: "vertexai.cnrm.cloud.google.com", Kind: "VertexAIEndpoint"}:
 
 			default:
-				t.Skipf("gk %v not suppported by mock gcp %v; skipping", gvk.GroupKind(), name)
+				t.Skipf("gk %v not supported by mock gcp %v; skipping", gvk.GroupKind(), name)
 			}
 		}
 	}
@@ -919,7 +919,7 @@ func MaybeSkip(t *testing.T, name string, resources []*unstructured.Unstructured
 
 		case "projectinorg":
 		default:
-			t.Skipf("test %v not suppported by vcr; skipping", name)
+			t.Skipf("test %v not supported by vcr; skipping", name)
 		}
 	}
 }

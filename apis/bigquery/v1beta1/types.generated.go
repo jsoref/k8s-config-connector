@@ -575,7 +575,7 @@ type Dataset struct {
 	//  afterwards, and does not alter the existing tables.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	DefaultCollation *string `json:"defaultCollation,omitempty"`
 
@@ -1060,7 +1060,7 @@ type ExternalDataConfiguration struct {
 	//  * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits);
 	//  * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits);
 	//  * (76,38) -> BIGNUMERIC;
-	//  * (77,38) -> BIGNUMERIC (error if value exeeds supported range).
+	//  * (77,38) -> BIGNUMERIC (error if value exceeds supported range).
 	//
 	//  This field cannot contain duplicate types. The order of the types in this
 	//  field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as
@@ -1126,8 +1126,8 @@ type ExternalServiceCost struct {
 	// External service cost in terms of bigquery slot milliseconds.
 	SlotMs *int64 `json:"slotMs,omitempty"`
 
-	// Non-preemptable reserved slots used for external job.
-	//  For example, reserved slots for Cloua AI Platform job are the VM usages
+	// Non-preemptible reserved slots used for external job.
+	//  For example, reserved slots for Cloud AI Platform job are the VM usages
 	//  converted to BigQuery slot with equivalent mount of price.
 	ReservedSlotCount *int64 `json:"reservedSlotCount,omitempty"`
 }
@@ -1602,7 +1602,7 @@ type JobConfigurationLoad struct {
 
 	// If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity
 	//  properties to load into BigQuery from a Cloud Datastore backup. Property
-	//  names are case sensitive and must be top-level properties. If no properties
+	//  names are case-sensitive and must be top-level properties. If no properties
 	//  are specified, BigQuery loads all properties. If any named property isn't
 	//  found in the Cloud Datastore backup, an invalid error is returned in the
 	//  job result.
@@ -1674,7 +1674,7 @@ type JobConfigurationLoad struct {
 	//  * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits);
 	//  * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits);
 	//  * (76,38) -> BIGNUMERIC;
-	//  * (77,38) -> BIGNUMERIC (error if value exeeds supported range).
+	//  * (77,38) -> BIGNUMERIC (error if value exceeds supported range).
 	//
 	//  This field cannot contain duplicate types. The order of the types in this
 	//  field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as
@@ -2075,7 +2075,7 @@ type JobStatistics struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.JobStatistics.TransactionInfo
 type JobStatistics_TransactionInfo struct {
-	// Output only. [Alpha] Id of the transaction.
+	// Output only. [Alpha] ID of the transaction.
 	TransactionID *string `json:"transactionID,omitempty"`
 }
 
@@ -2795,7 +2795,7 @@ type Model_AggregateClassificationMetrics struct {
 
 	// Threshold at which the metrics are computed. For binary
 	//  classification models this is the positive class threshold.
-	//  For multi-class classfication models this is the confidence
+	//  For multi-class classification models this is the confidence
 	//  threshold.
 	Threshold *float64 `json:"threshold,omitempty"`
 
@@ -3122,7 +3122,7 @@ type Model_HparamSearchSpaces struct {
 	// Minimum split loss for boosted tree models.
 	MinSplitLoss *Model_float64HparamSearchSpace `json:"minSplitLoss,omitempty"`
 
-	// Hyperparameter for matrix factoration when implicit feedback type is
+	// Hyperparameter for matrix factorization when implicit feedback type is
 	//  specified.
 	WalsAlpha *Model_float64HparamSearchSpace `json:"walsAlpha,omitempty"`
 
@@ -3173,7 +3173,7 @@ type Model_HparamTuningTrial struct {
 	// Ending time of the trial.
 	EndTimeMs *int64 `json:"endTimeMs,omitempty"`
 
-	// The hyperprameters selected for this trial.
+	// The hyperparameters selected for this trial.
 	Hparams *Model_TrainingRun_TrainingOptions `json:"hparams,omitempty"`
 
 	// Evaluation metrics of this trial calculated on the test data.
@@ -3331,7 +3331,7 @@ type Model_SeasonalPeriod struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.Model.StringHparamSearchSpace
 type Model_StringHparamSearchSpace struct {
-	// Canididates for the string or enum parameter in lower case.
+	// Candidates for the string or enum parameter in lower case.
 	Candidates []string `json:"candidates,omitempty"`
 }
 
@@ -3486,7 +3486,7 @@ type Model_TrainingRun_IterationResult_ClusterInfo struct {
 
 // +kcc:proto=google.cloud.bigquery.v2.Model.TrainingRun.IterationResult.PrincipalComponentInfo
 type Model_TrainingRun_IterationResult_PrincipalComponentInfo struct {
-	// Id of the principal component.
+	// ID of the principal component.
 	PrincipalComponentID *int64 `json:"principalComponentID,omitempty"`
 
 	// Explained variance by this principal component, which is simply the
@@ -3639,7 +3639,7 @@ type Model_TrainingRun_TrainingOptions struct {
 	//  factorization.
 	FeedbackType *string `json:"feedbackType,omitempty"`
 
-	// Hyperparameter for matrix factoration when implicit feedback type is
+	// Hyperparameter for matrix factorization when implicit feedback type is
 	//  specified.
 	WalsAlpha *float64 `json:"walsAlpha,omitempty"`
 
@@ -4188,12 +4188,12 @@ type Routine struct {
 	//  not exhaustive, and successfully creating a procedure doesn't guarantee
 	//  that the procedure will successfully execute at runtime. If `strictMode` is
 	//  set to `TRUE`, the procedure body is further checked for errors such as
-	//  non-existent tables or columns. The `CREATE PROCEDURE` statement fails if
+	//  nonexistent tables or columns. The `CREATE PROCEDURE` statement fails if
 	//  the body fails any of these checks.
 	//
 	//  If `strictMode` is set to `FALSE`, the procedure body is checked only for
 	//  syntax. For procedures that invoke themselves recursively, specify
-	//  `strictMode=FALSE` to avoid non-existent procedure errors during
+	//  `strictMode=FALSE` to avoid nonexistent procedure errors during
 	//  validation.
 	//
 	//  Default value is `TRUE`.
@@ -4477,7 +4477,7 @@ type SparkStatistics struct {
 	SparkJobID *string `json:"sparkJobID,omitempty"`
 
 	// Output only. Location where the Spark job is executed.
-	//  A location is selected by BigQueury for jobs configured to run in a
+	//  A location is selected by BigQuery for jobs configured to run in a
 	//  multi-region.
 	SparkJobLocation *string `json:"sparkJobLocation,omitempty"`
 
@@ -4786,7 +4786,7 @@ type Table struct {
 	//  added afterwards, and does not alter the existing fields.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	DefaultCollation *string `json:"defaultCollation,omitempty"`
 
@@ -4994,7 +4994,7 @@ type TableFieldSchema struct {
 	// Optional. Field collation can be set only when the type of field is STRING.
 	//  The following values are supported:
 	//
-	//  * 'und:ci': undetermined locale, case insensitive.
+	//  * 'und:ci': undetermined locale, case-insensitive.
 	//  * '': empty string. Default to case-sensitive behavior.
 	Collation *string `json:"collation,omitempty"`
 

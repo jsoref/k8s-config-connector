@@ -868,7 +868,7 @@ spec:
                       type: object
                     type: array
                   gcpPublicCidrsAccessEnabled:
-                    description: Whether master is accessbile via Google Compute Engine
+                    description: Whether master is accessible via Google Compute Engine
                       Public IP addresses.
                     type: boolean
                 type: object
@@ -1450,7 +1450,7 @@ spec:
                     type: object
                 type: object
               nodePoolDefaults:
-                description: The default nodel pool settings for the entire cluster.
+                description: The default node pool settings for the entire cluster.
                 properties:
                   nodeConfigDefaults:
                     description: Subset of NodeConfig message that has defaults.
@@ -1491,7 +1491,7 @@ spec:
                         properties:
                           eventType:
                             description: Can be used to filter what notifications
-                              are sent. Valid values include include UPGRADE_AVAILABLE_EVENT,
+                              are sent. Valid values include UPGRADE_AVAILABLE_EVENT,
                               UPGRADE_EVENT and SECURITY_BULLETIN_EVENT.
                             items:
                               type: string
@@ -1716,7 +1716,7 @@ spec:
                   field will not be blocked.
                 properties:
                   enabled:
-                    description: When enabled, services with exterenal ips specified
+                    description: When enabled, services with external ips specified
                       will be allowed.
                     type: boolean
                 required:

@@ -109,7 +109,7 @@ func convertAPItoKRM_LoggingLogMetric(projectID string, in *api.LogMetric) (*uns
 
 	u := &unstructured.Unstructured{}
 	if err := util.Marshal(lm, u); err != nil {
-		return nil, fmt.Errorf("error marshing logMetric to unstructured %w", err)
+		return nil, fmt.Errorf("error marshalling logMetric to unstructured %w", err)
 	}
 
 	return u, nil
@@ -276,11 +276,11 @@ func compareLinearBuckets(kccObj *krm.LogmetricLinearBuckets, apiObj *api.Linear
 	apiLinearBuckets := struct {
 		numFiniteBuckets int64
 		offset           float64
-		witdh            float64
+		width            float64
 	}{
 		numFiniteBuckets: apiObj.NumFiniteBuckets,
 		offset:           apiObj.Offset,
-		witdh:            apiObj.Width,
+		width:            apiObj.Width,
 	}
 
 	return reflect.DeepEqual(kccObj, apiLinearBuckets)

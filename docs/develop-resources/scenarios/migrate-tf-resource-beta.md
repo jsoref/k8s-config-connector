@@ -13,7 +13,7 @@ Follow [deep-dives Step 1](../deep-dives/1-add-mockgcp-tests.md). We use the Ter
 
 * The 1st git-commit shall contain `create.yaml` and `update.yaml` files with exactly the same config. 
 * The 2nd git-commit shall have `update.yaml` changing all the mutable fields, reflected in the git-diff based on the first commit.
-* The 3rd git-commit (or N-th git-commit) shall run against real GCP. The generated `_generated_object_<resource>.golden.yaml` and `_http.log` is the golden log reflecting the real GCP. The `_generated_obeject_<resource>.golden.yaml` matches the `spec` in `update.yaml`
+* The 3rd git-commit (or N-th git-commit) shall run against real GCP. The generated `_generated_object_<resource>.golden.yaml` and `_http.log` is the golden log reflecting the real GCP. The `_generated_object_<resource>.golden.yaml` matches the `spec` in `update.yaml`
 * The 4rd git-commit (or N+1-th git-commit) shall run against the Mock GCP. The git-diff shows `_generated_object_<resource>.golden.yaml` is unchanged, and the `_http.log` is as much like the real GCP as possible. 
 
 * If the resource has dependencies (`dependencies.yaml`), we should cover all the referenced fields. If the dependency resource does not have mockGCP, you need to implement those dependencies' MockGCP methods as well.
@@ -55,7 +55,7 @@ The PR adds the direct mapper. You can do this together with the previous step o
 
 Follow [deep-dives Step 4](../deep-dives/4-add-controller.md).
 
-* Use the `KCC_USE_DIRECT_RECONCILERS` flag [exampe](https://github.com/GoogleCloudPlatform/k8s-config-connector/blob/0bbac86ace6ab2f4051b574f026d5fe47fa05b75/dev/tasks/run-e2e#L27). 
+* Use the `KCC_USE_DIRECT_RECONCILERS` flag [example](https://github.com/GoogleCloudPlatform/k8s-config-connector/blob/0bbac86ace6ab2f4051b574f026d5fe47fa05b75/dev/tasks/run-e2e#L27). 
 
 *Tips* The `KCC_USE_DIRECT_RECONCILERS` will override the `tf2crd` and `dcl2crd` label to force using the direct controller, but it will not affect the releases which will still use the Terraform/DCL based controllers until the Direct controller is fully ready. This allows developing the API and controller in different Config Connector releases without code freeze.
 

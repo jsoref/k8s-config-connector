@@ -584,7 +584,7 @@ type Job struct {
 	//  Flexible resource scheduling jobs are started with some delay after job
 	//  creation, so start_time is unset before start and is updated when the
 	//  job is started by the Cloud Dataflow service. For other jobs, start_time
-	//  always equals to create_time and is immutable and set by the Cloud Dataflow
+	//  always equals create_time and is immutable and set by the Cloud Dataflow
 	//  service.
 	StartTime *string `json:"startTime,omitempty"`
 
@@ -912,7 +912,7 @@ type PubsubLocation struct {
 
 // +kcc:proto=google.dataflow.v1beta3.RuntimeEnvironment
 type RuntimeEnvironment struct {
-	// The initial number of Google Compute Engine instnaces for the job.
+	// The initial number of Google Compute Engine instance for the job.
 	NumWorkers *int32 `json:"numWorkers,omitempty"`
 
 	// The maximum number of Google Compute Engine instances to be made

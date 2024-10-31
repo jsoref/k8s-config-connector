@@ -183,7 +183,7 @@ func topLevelObjectFieldExistsInStateMap(state map[string]interface{}, field str
 	if !ok {
 		return false, fmt.Errorf("field '%v' is not an object field", field)
 	}
-	// An object field should be considered non-existent if no sub-field is specified.
+	// An object field should be considered nonexistent if no sub-field is specified.
 	if len(listVal) == 0 {
 		return false, nil
 	}
@@ -304,7 +304,7 @@ func getLastAppliedValue(r *Resource, path ...string) (val interface{}, found bo
 	}
 	lastAppliedConfig := make(map[string]interface{})
 	if err := json.Unmarshal([]byte(lastAppliedConfigRaw), &lastAppliedConfig); err != nil {
-		return nil, false, fmt.Errorf("error unmarshaling last applied configuration: %w", err)
+		return nil, false, fmt.Errorf("error unmarshalling last applied configuration: %w", err)
 	}
 	specPath := append([]string{"spec"}, path...)
 	return unstructured.NestedFieldCopy(lastAppliedConfig, specPath...)

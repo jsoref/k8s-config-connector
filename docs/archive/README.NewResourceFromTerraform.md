@@ -146,8 +146,8 @@ ServiceMappings file. Add the `ResourceConfig` for your resource:
 **Tip**: You can
 [use the auto-generated service mappings as a reference](#using-the-auto-generated-service-mappings-as-a-reference).
 
-**Tip**: The full list of available properties for a `ResourceConfig` is defined
-[here](pkg/apis/core/v1alpha1/servicemapping_types.go#L46).
+**Tip**: See the [full list of available properties for a
+`ResourceConfig`](pkg/apis/core/v1alpha1/servicemapping_types.go#L46).
 
 1.  Open the Service Mappings file from the previous section for editing. In the
     case of the `Spanner` service the file is named `spanner.yaml`.
@@ -246,7 +246,7 @@ ServiceMappings file. Add the `ResourceConfig` for your resource:
 
 1.  Fill out the `resourceAvailableInAssetInventory`. Set to false.
 
-1.  Add `hierarchicalReferences` if they exist. Determine if the corresonding
+1.  Add `hierarchicalReferences` if they exist. Determine if the corresponding
     Terraform resource exposes one or more parent resources through top-level
     fields. These fields can have names like `org_id`, `parent_org_id`,
     `parent_folder_id`, `folder`, `project`, etc. Additionally, we consider
@@ -281,9 +281,8 @@ ServiceMappings file. Add the `ResourceConfig` for your resource:
     Note: The `containers` field has been deprecated, and
     `hierarchicalReferences` should be used instead.
 
-1.  Follow the resource reference guidelines
-    [here](README.ConfigureResourceReferences.md) to identify and configure
-    potential resource reference fields.
+1.  Follow the [resource reference guidelines](README.ConfigureResourceReferences.md)
+    to identify and configure potential resource reference fields.
 
 1.  Add `observedFields` if a common solution depends on the computed values
     from unspecified fields under `spec`. The field names should be paths of the
@@ -601,7 +600,7 @@ samples are created for that resource.
 
 1.  In [config/samples/resources](config/samples/resources), create a new
     directory for the resource's samples: `mkdir spannerinstance`.
-1.  Follow the sample guidelines [here](README.Samples.md) and create sample(s)
+1.  Follow the [sample guidelines](README.Samples.md) and create sample(s)
     for the resource.
 
 ## Run/Disable Sample Tests
@@ -854,10 +853,9 @@ projects, folders, and billing accounts.**
 *   All the resource names should be `[lowercase(Kind)]-${uniqueId}`, e.g.
     `cloudschedulerjob-${uniqueId}`, `pubsubtopic-${uniqueId}`.
 
-    *   ${uniqueId} is a 20-char unique ID generated
-        [here](pkg/test/resourcefixture/variable/variables.go#16). We always
-        want to use the `-${uniqueId}` as the suffix for the resource name in
-        testdata.
+    *   ${uniqueId} is a [generated](pkg/test/resourcefixture/variable/variables.go#16)
+        20-char unique ID. We always want to use the `-${uniqueId}` as the
+        suffix for the resource name in testdata.
 
     *   If there are multiple resources of the same kind used in the same test
         cases, the resource names should be
@@ -889,7 +887,7 @@ Config Connector used to handle
 [locational resources](https://docs.google.com/document/d/1YNVQpBLRtSXF9hi8FK3R5qQLdO1-6J8EpcZ7bQ0ZCTQ/edit?usp=sharing),
 e.g. compute addresses, forwarding rules, disks differently than other
 non-locational resources. This special handling/configuration of resources is
-now discouraged as we want the KRM resources reflect underlying TF rsources as
+now discouraged as we want the KRM resources reflect underlying TF resources as
 much as possible, which will also ease the learnings from contributors when
 adding new resources.
 

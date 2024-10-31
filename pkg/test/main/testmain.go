@@ -72,7 +72,7 @@ func SetupMultipleEnvironments(m *testing.M, testType test.Type, crds []*apiexte
 		if testType == test.IntegrationTestType {
 			whCfgs, err = webhook.GetTestCommonWebhookConfigs()
 			if err != nil {
-				log.Fatalf("error getting common wehbook configs: %v", err)
+				log.Fatalf("error getting common webhook configs: %v", err)
 			}
 		}
 		env := testenvironment.StartTestEnvironmentOrLogFatal(testType, crds, whCfgs)
@@ -82,7 +82,7 @@ func SetupMultipleEnvironments(m *testing.M, testType test.Type, crds []*apiexte
 		stops = append(stops, stop)
 
 		if err := testcontroller.EnsureNamespaceExists(mgr.GetClient(), k8s.SystemNamespace); err != nil {
-			log.Fatalf("error ensuring namesapce exists: %v", err)
+			log.Fatalf("error ensuring namespace exists: %v", err)
 		}
 		*mp = mgr
 	}

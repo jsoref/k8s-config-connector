@@ -247,7 +247,7 @@ func (r *Reconciler) handleConfigConnectorLifecycle() declarative.ObjectTransfor
 			if err := r.client.Update(ctx, cc); err != nil {
 				return fmt.Errorf("error adding %v finalizer in ConfigConnector object %v: %w", k8s.OperatorFinalizer, cc.GetName(), err)
 			}
-			// Create the cnrm-systm namespace first; this is done to prevent the creation of components from failing due to the cnrm-system namespace not existing yet.
+			// Create the cnrm-system namespace first; this is done to prevent the creation of components from failing due to the cnrm-system namespace not existing yet.
 			if err := createCNRMSystemNamespace(ctx, r.client, m); err != nil {
 				return fmt.Errorf("error creating %v namespace: %w", k8s.CNRMSystemNamespace, err)
 			}
@@ -434,7 +434,7 @@ func (r *Reconciler) verifyPerNamespaceControllerManagerPodsAreDeleted(ctx conte
 	if len(podList.Items) == 1 && podList.Items[0].Name == k8s.ControllerManagerPodForClusterMode {
 		return nil
 	}
-	return fmt.Errorf("per-namespace controller manager pods are not yet deleted by configconnectorcontext controller, reenquee the reconciliation for another attempt later; "+
+	return fmt.Errorf("per-namespace controller manager pods are not yet deleted by configconnectorcontext controller, reenqueue the reconciliation for another attempt later; "+
 		"remaining pods include, but may not be limited to %v", podNames)
 }
 
@@ -714,7 +714,7 @@ func (r *Reconciler) applyValidatingWebhookConfigurationCustomizationCR(ctx cont
 			r.log.Info("target webhook configuration not found, skipped customization", "target webhook configuration name", targetWebhookConfigurationName)
 			return nil
 		}
-		return r.handleApplyValidatingWebhookConfigurationCustomizationCRFailed(ctx, cr, fmt.Sprintf("failed to apply cusotmization to webhook configuration %s: %v", targetWebhookConfigurationName, err))
+		return r.handleApplyValidatingWebhookConfigurationCustomizationCRFailed(ctx, cr, fmt.Sprintf("failed to apply customization to webhook configuration %s: %v", targetWebhookConfigurationName, err))
 	}
 	// 2. update webhook configuration.
 	whTimeouts := make(map[string]*int32) // whTimeouts is a map of webhook fully qualified name to its customized timeout value.
@@ -760,7 +760,7 @@ func (r *Reconciler) applyMutatingWebhookConfigurationCustomizationCR(ctx contex
 			r.log.Info("target webhook configuration not found, skipped customization", "target webhook configuration name", targetWebhookConfigurationName)
 			return nil
 		}
-		return r.handleApplyMutatingWebhookConfigurationCustomizationCRFailed(ctx, cr, fmt.Sprintf("failed to apply cusotmization to webhook configuration %s: %v", targetWebhookConfigurationName, err))
+		return r.handleApplyMutatingWebhookConfigurationCustomizationCRFailed(ctx, cr, fmt.Sprintf("failed to apply customization to webhook configuration %s: %v", targetWebhookConfigurationName, err))
 	}
 	// 2. update webhook configuration.
 	whTimeouts := make(map[string]*int32) // whTimeouts is a map of webhook fully qualified name to its customized timeout value.

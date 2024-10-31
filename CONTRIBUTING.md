@@ -2,7 +2,7 @@
 
 We'd love to accept your patches and contributions to this project. We use this
 GitHub project as our primary source of truth and the main development
-repository for Config Connetor. The source code in this project is also
+repository for Config Connector. The source code in this project is also
 mirrored to internal Google repository for the purposes of releases.
 
 ## Contributor License Agreement
@@ -114,7 +114,7 @@ repo to quickly set up a local dev environment.
     ./docker-setup.sh
     ```
 
-1.  Exit your current session, then SSH back in to the VM. Then run the
+1.  Exit your current session, then SSH back into the VM. Then run the
     following to ensure you have set up sudoless docker correctly:
 
     ```shell
@@ -149,7 +149,7 @@ repo to quickly set up a local dev environment.
     ```shell
     ./gcp-setup.sh
     ```
-1.  _(Optional)_ Verify that worload identity federation is [setup correctly](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#verify_the_setup).
+1.  _(Optional)_ Verify that workload identity federation is [setup correctly](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#verify_the_setup).
 
 1.  Now that you have everything set up, you can build your own images and then
     deploy the Config Connector CRDs and workloads (including controller
@@ -200,7 +200,7 @@ repo to quickly set up a local dev environment.
 The script `gcp-setup.sh` annotates your `default` namespace in the GKE cluster
 with a
 [project-id](https://cloud.google.com/config-connector/docs/how-to/organizing-resources/project-scoped-resources#annotate_namespace_configuration)
-annotation equals to your default GCP project id in gcloud. This enables Config
+annotation equal to your default GCP project id in gcloud. This enables Config
 Connector to create GCP resources in that default GCP project. We can validate
 by creating an Artifact Registry resource through Config Connector.
 
@@ -232,8 +232,8 @@ by creating an Artifact Registry resource through Config Connector.
 
 #### Looking for error logs
 
-You can look for error logs by checking the controller logs following the steps
-[here](https://cloud.google.com/config-connector/docs/troubleshooting#check-controller-logs).
+You can look for error logs by checking the controller logs following the [troubleshooting
+steps](https://cloud.google.com/config-connector/docs/troubleshooting#check-controller-logs).
 
 #### Pods fail to pull image
 When the cluster is created without providing a service account, a Compute Engine service account is created for the cluster. Users must grant the service account permission to pull images from the project registry.
@@ -367,14 +367,14 @@ can run it locally on your dev machine with the steps below.
 If you are adding a new resource, you need to follow the steps in [NewResourceFromTerraform.md](README.ChangingTerraform.md)
 to make code changes, add test data, and run the tests for your resource.
 
-If you are working on a existing resource, test yaml should exist under
+If you are working on an existing resource, test yaml should exist under
 ./pkg/test/resourcefixture/testdata/basic, you can run the test command directly
 to make sure the test can still pass. Example command:
 
 ```bash
-   # Export the environment variables needed in the dynamic tests if you haven't done it.
-   TEST_FOLDER_ID=123456789 go test -v -tags=integration ./pkg/controller/dynamic/ -test.run TestCreateNoChangeUpdateDelete -run-tests cloudschedulerjob -timeout 900s
- ```
+# Export the environment variables needed in the dynamic tests if you haven't done it.
+TEST_FOLDER_ID=123456789 go test -v -tags=integration ./pkg/controller/dynamic/ -test.run TestCreateNoChangeUpdateDelete -run-tests cloudschedulerjob -timeout 900s
+```
 Replace `cloudschedulerjob` with your test target.
 
 ### Submit a Pull Request
@@ -387,5 +387,5 @@ you can first validate the change locally:
 make ready-pr
 ```
 
-You can then commit your change and make a pull request. See more details
-[here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#making-and-pushing-changes).
+You can then commit your change and make a pull request. See [GitHub's contributing
+to projects: making and pushing changes](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#making-and-pushing-changes).

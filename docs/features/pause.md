@@ -2,7 +2,7 @@
 
 > `Feature State`: `alpha` as of version v1.114
 
-KCC can be configured to pause actuation of resouces on the cloud provider
+KCC can be configured to pause actuation of resources on the cloud provider
 (GCP). K8s objects continue to be reconciled with the api server but any
 interaction with the cloud provider should be paused. This can be helpful for
 debugging purposes or to have a hot standby.
@@ -11,7 +11,7 @@ debugging purposes or to have a hot standby.
 
 We extended the API definitions for the Config Connector and Config ConnectorContext resources to
 support a new field, `spec.actuationMode`. The field's current supported values are `Reconciling`
-and `Paused` with `Reconciling` being the default for backwards compatiblity.
+and `Paused` with `Reconciling` being the default for backwards compatibility.
 As such, KCC can be "paused" both globally and on a per-namespace level if running in namespace mode
 
 ### Pausing Globally

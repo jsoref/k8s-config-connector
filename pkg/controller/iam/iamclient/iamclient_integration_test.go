@@ -306,7 +306,7 @@ func testResolveMemberIdentity(ctx context.Context, t *testing.T, iamClient *kcc
 	}
 	_, err = kcciamclient.ResolveMemberIdentity(ctx, "", memberFrom, testContext.NamespacedName.Namespace, iamClient.TFIAMClient)
 	if err == nil || !k8s.IsReferenceNotFoundError(err) {
-		t.Fatalf("resolving member identity with non-existent memberFrom reference: got error: %v, want ReferenceNotFoundError", err)
+		t.Fatalf("resolving member identity with nonexistent memberFrom reference: got error: %v, want ReferenceNotFoundError", err)
 	}
 
 	memberFrom.ServiceAccountRef.Name = testContext.NamespacedName.Name
@@ -757,7 +757,7 @@ func testConflictPreventionWithEtags(ctx context.Context, t *testing.T, iamClien
 		t.Fatalf("error setting iam policy: %v", err)
 	}
 	if noChangePolicy.Spec.Etag != etag {
-		t.Fatalf("expect no change of etag since there is no realy IAM policy change")
+		t.Fatalf("expect no change of etag since there is no real IAM policy change")
 	}
 
 	// Set a new IAM policy

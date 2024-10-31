@@ -96,7 +96,7 @@ type TypeUpdater struct {
 	opts               *UpdateTypeOptions
 	newField           newProtoField
 	dependentMessages  map[string]protoreflect.MessageDescriptor // key: fully qualified name of proto message
-	generatedGoField   generatedGoField                          // TOOD: support multiple new fields
+	generatedGoField   generatedGoField                          // TODO: support multiple new fields
 	generatedGoStructs []generatedGoStruct
 }
 
@@ -112,7 +112,7 @@ type generatedGoField struct {
 
 type generatedGoStruct struct {
 	name    string // fully qualified name of the proto message
-	content []byte // the content of the genearted Go struct
+	content []byte // the content of the generated Go struct
 }
 
 func NewTypeUpdater(opts *UpdateTypeOptions) *TypeUpdater {
@@ -143,7 +143,7 @@ func (u *TypeUpdater) Run() error {
 	return nil
 }
 
-// anaylze finds the new field, its parent message, and all dependent messages that need to be generated.
+// analyze finds the new field, its parent message, and all dependent messages that need to be generated.
 func (u *TypeUpdater) analyze() error {
 	parentMessage, newField, err := findNewField(u.opts.ProtoSourcePath, u.opts.parentMessageFullName, u.opts.newField)
 	if err != nil {
@@ -238,7 +238,7 @@ func (u *TypeUpdater) generate() error {
 
 	for _, msg := range u.dependentMessages {
 		var buf bytes.Buffer
-		klog.Infof("genearte Go code for messge %s", msg.FullName())
+		klog.Infof("generate Go code for message %s", msg.FullName())
 		codegen.WriteMessage(&buf, msg)
 		u.generatedGoStructs = append(u.generatedGoStructs,
 			generatedGoStruct{

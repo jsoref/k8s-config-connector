@@ -25,7 +25,7 @@ import (
 )
 
 var (
-	yamlSeperator = []byte("---\n")
+	yamlSeparator = []byte("---\n")
 	// YAML streams are terminated with "..." which signifies the end of transmission: https://yaml.org/spec/1.2/spec.html
 	yamlTransmissionTerminator = []byte("...")
 )
@@ -41,7 +41,7 @@ type YAMLStream struct {
 	nextErr            error
 	// true if the consumer of the stream has read at least one non-error result
 	returnedAtLeastOneNonErrorResult bool
-	// true if the end of the stream was reached and the tranmission terminator was returned
+	// true if the end of the stream was reached and the transmission terminator was returned
 	returnedTransmissionTerminator bool
 }
 
@@ -76,7 +76,7 @@ func (y *YAMLStream) Next(ctx context.Context) ([]byte, *unstructured.Unstructur
 		y.nextErr = nil
 		return nil, nil, err
 	}
-	bytes = append(yamlSeperator, bytes...)
+	bytes = append(yamlSeparator, bytes...)
 	y.fillNext(ctx)
 	y.returnedAtLeastOneNonErrorResult = true
 	return bytes, unstructured, nil

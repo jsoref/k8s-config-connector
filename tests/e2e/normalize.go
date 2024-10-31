@@ -191,8 +191,8 @@ func normalizeKRMObject(t *testing.T, u *unstructured.Unstructured, project test
 	visitor.sortSlices.Insert(".spec.nodeConfig.oauthScopes")
 
 	if u.GetKind() == "Project" {
-		// For some tests that talk to the Mock Resource Manager, the Project object's ProjectID and ProjectNumber are dynamcially generated.
-		// We do not want to overrride this with the default mocked Project "mock-project".
+		// For some tests that talk to the Mock Resource Manager, the Project object's ProjectID and ProjectNumber are dynamically generated.
+		// We do not want to override this with the default mocked Project "mock-project".
 		visitor.replacePaths[".status.number"] = "${projectNumber}"
 	}
 
@@ -313,7 +313,7 @@ func normalizeKRMObject(t *testing.T, u *unstructured.Unstructured, project test
 
 	})
 
-	return visitor.VisitUnstructued(u)
+	return visitor.VisitUnstructured(u)
 }
 
 func setStringAtPath(m map[string]any, atPath string, newValue string) error {
@@ -474,7 +474,7 @@ func (o *objectWalker) visitString(v string, path string) (string, error) {
 	return v, nil
 }
 
-func (o *objectWalker) VisitUnstructued(v *unstructured.Unstructured) error {
+func (o *objectWalker) VisitUnstructured(v *unstructured.Unstructured) error {
 	if err := o.visitMap(v.Object, ""); err != nil {
 		return err
 	}

@@ -93,7 +93,7 @@ func NewFromAsset(a *asset.Asset, smLoader *servicemappingloader.ServiceMappingL
 	name := trimServiceHostName(a, sm)
 	importID, err := convertAssetNameToImportID(rc, name)
 	if err != nil {
-		return nil, fmt.Errorf("error coverting cloud asset inventory name '%v' to resource id: %w", name, err)
+		return nil, fmt.Errorf("error converting cloud asset inventory name '%v' to resource id: %w", name, err)
 	}
 	state, err := krmtotf.ImportState(context.Background(), importID, &tfInfo, tfProvider)
 	if err != nil {
@@ -215,7 +215,7 @@ type iamCustomRoleID struct {
 func parseIAMCustomRoleID(id string) (*iamCustomRoleID, error) {
 	partitions := strings.Split(id, "/")
 	if len(partitions) != 4 {
-		return nil, fmt.Errorf("expected 4 partitions split by '/' for for '%v'", id)
+		return nil, fmt.Errorf("expected 4 partitions split by '/' for '%v'", id)
 	}
 	value := iamCustomRoleID{
 		parentID: partitions[1],

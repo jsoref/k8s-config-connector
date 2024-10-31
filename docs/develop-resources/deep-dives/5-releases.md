@@ -23,7 +23,7 @@
 
 * Add `kubebuilder:storageversion` tag to `v1beta1 `API. [example](https://github.com/GoogleCloudPlatform/k8s-config-connector/blob/1b19153411653329177f4ba0991c982f36970707/apis/cloudbuild/v1beta1/workerpool_types.go#L155)
 
-* Run `dev/taks/generate-crds` to patch your resource's CRD with the `v1beta1` version.
+* Run `dev/task/generate-crds` to patch your resource's CRD with the `v1beta1` version.
 
 ## 5.3 Turn on doc auto-generation (direct resource only)
 
@@ -37,7 +37,7 @@
 
 1.  In [config/samples/resources](config/samples/resources), create a new
     directory for the resource's samples: `mkdir spannerinstance`.
-1.  Follow the sample guidelines [here](../../README.Samples.md) and create sample(s) for the resource.
+1.  Follow the [sample guidelines](../../README.Samples.md) and create sample(s) for the resource.
 
 ### Run/Disable Sample Tests
 
